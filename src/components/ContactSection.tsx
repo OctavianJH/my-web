@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,13 +15,30 @@ export const ContactSection = () => {
   });
   const { toast } = useToast();
 
+  // Single handleSubmit inside component
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
+
+    emailjs.send(
+      "service_g044yyg",      // your Service ID
+      "template_d0b48pk",     // your Template ID
+      formData,               // { name, email, message }
+      "vQGFUMDqEcYObfT4q"     // your EmailJS Public Key
+    )
+    .then(() => {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    })
+    .catch((error) => {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+      });
+      console.error(error);
     });
-    setFormData({ name: "", email: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -36,7 +54,7 @@ export const ContactSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
           Contact
         </h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Form */}
           <Card className="border border-primary/10 bg-card/30 backdrop-blur-sm shadow-lg">
@@ -81,7 +99,7 @@ export const ContactSection = () => {
               </form>
             </CardContent>
           </Card>
-          
+
           {/* Social Links */}
           <div className="space-y-6">
             <Card className="border border-primary/10 bg-card/30 backdrop-blur-sm shadow-lg">
@@ -103,7 +121,7 @@ export const ContactSection = () => {
                     <p className="text-muted-foreground text-sm">Professional Network</p>
                   </div>
                 </a>
-                
+
                 <a
                   href="https://github.com/OctavianJH"
                   target="_blank"
@@ -118,7 +136,7 @@ export const ContactSection = () => {
                     <p className="text-muted-foreground text-sm">Code Repository</p>
                   </div>
                 </a>
-                
+
                 <a
                   href="mailto:octavianjhumphreys@icloud.com"
                   className="flex items-center p-4 rounded-lg border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 group"
