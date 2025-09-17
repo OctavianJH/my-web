@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
 const skills = [
-  { name: "Python", level: 88 },
-  { name: "SciKit Learn and Numpy", level: 75 },
-  { name: "Flask", level: 64 }
+  { name: "Python", level: 70 },
+  { name: "Python ML/AI Libraries (SciKit Learn and Numpy)", level: 50 },
+  { name: "Flask", level: 50 }
 ];
 
 const education = [
@@ -16,9 +16,9 @@ const education = [
 ];
 
 const certifications = [
-  "Harvard CS50P",
-  "Harvard CS50AI",
-  "Academic Scholarship for 6th Form"
+  "Harvard CS50P (Completed)",
+  "Harvard CS50AI (in progress)",
+  "Academic Scholarship for 6th Form."
 ];
 
 export const SkillsSection = () => {
