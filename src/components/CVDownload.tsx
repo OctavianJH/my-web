@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export const CVDownload = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/CV_Octavian_Humphreys.pdf'; 
+    link.href = '/Octavian_Humphreys_CV2025.pdf'; 
     link.download = 'CV_Octavian_Humphreys.pdf';
     document.body.appendChild(link);
     link.click();
