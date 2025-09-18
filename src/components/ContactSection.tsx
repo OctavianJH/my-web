@@ -118,7 +118,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">LinkedIn</h4>
-                    <p className="text-muted-foreground text-sm">Professional Network</p>
+                    <p className="text-muted-foreground text-sm">My Main Profile - Let's Connect</p>
                   </div>
                 </a>
 
@@ -133,7 +133,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">GitHub</h4>
-                    <p className="text-muted-foreground text-sm">Code Repository</p>
+                    <p className="text-muted-foreground text-sm">My primary Code Repositories</p>
                   </div>
                 </a>
 

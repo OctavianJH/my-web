@@ -2,6 +2,18 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
+  const handleGithubClick = () => {
+    window.open('https://github.com/OctavianJH', '_blank');
+  };
+
+  const handleLinkedinClick = () => {
+    window.open('https://linkedin.com/in/octavian-humphreys-01baba176/', '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:octavianjhumphreys@icloud.com';
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
@@ -14,11 +26,11 @@ export const HeroSection = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-2 max-w-3xl mx-auto">
-          Aspiring Machine Learning and AI Engineer
+          Aspiring Machine Learning and AI Engineer - Currently 16 Years Old
         </p>
         
         <p className="text-md text-muted-foreground mb-8">
-          Looking for Work Experience • Located in London, UK
+          Looking for Work Experience for Jan 2026 • Located in London, UK
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
@@ -27,6 +39,7 @@ export const HeroSection = () => {
               variant="outline" 
               size="icon"
               className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+              onClick={handleGithubClick}
             >
               <Github className="w-4 h-4" />
             </Button>
@@ -35,6 +48,7 @@ export const HeroSection = () => {
               variant="outline" 
               size="icon"
               className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+              onClick={handleLinkedinClick}
             >
               <Linkedin className="w-4 h-4" />
             </Button>
@@ -43,6 +57,7 @@ export const HeroSection = () => {
               variant="outline" 
               size="icon"
               className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+              onClick={handleEmailClick}
             >
               <Mail className="w-4 h-4" />
             </Button>
