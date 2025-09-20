@@ -3,25 +3,26 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "AI Debug Assistant",
+    title: "In Progress - AI Debug Assistant",
     description: "Flask web app to help beginner Python coders learn and debug code.",
     tags: ["Python", "Flask", "AI", "Education"]
   },
   {
-    title: "Muay Thai Technique Improver",
+    title: "In Progress - Muay Thai Technique Improver",
     description: "An App that uses MediaPipe and OpenPose to study a person's striking technique, and give pointers on improvement.",
-    tags: ["Python", "MediaPipe", "OpenPose", "Computer Vision"]
+    tags: ["Python", "ML", "MediaPipe", "OpenPose"]
+  },
+    {
+    title: "Portfolio Website",
+    description: "Made this through a series of tutorials to try out making webpages using modern web technologies.",
+    tags: ["React", "HTML", "Tailwind CSS", "Web Development"]
   },
   {
     title: "Mini Python Games",
     description: "Primarily used to develop and help me improve at python, I created a series of Mini-Games.",
     tags: ["Python", "Game Development", "Learning"]
   },
-  {
-    title: "Portfolio Website",
-    description: "Made this through a series of tutorials to try out making webpages using modern web technologies.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Web Development"]
-  }
+
 ];
 
 export const ProjectsSection = () => {
